@@ -1,0 +1,45 @@
+<div class="input-group flex-nowrap mb-3">
+  <select
+    name="fisrtCurrency"
+    class="form-select form-select-lg custom-select"
+    (change)="onFirstSelect($event)"
+  >
+    <option value="UAH">Українська гривня (UAH)</option>
+    <option
+      *ngFor="let rate of rates"
+      value="{{ rate.cc }}"
+    >
+      {{ rate.txt }} ({{ rate.cc }})
+    </option>
+  </select>
+
+  <input
+    type="number"
+    class="form-control fs-3"
+    value="{{ firstValue }}"
+    (input)="onFirstInputChange($event)"
+  >
+</div>
+
+<div class="input-group flex-nowrap">
+  <select
+    name="secondCurrency"
+    class="form-select form-select-lg"
+    (change)="onSecondSelect($event)"
+  >
+    <option value="UAH">Українська гривня (UAH)</option>
+    <option
+      *ngFor="let rate of rates"
+      value="{{ rate.cc }}"
+    >
+      {{ rate.txt }} ({{ rate.cc }})
+    </option>
+  </select>
+
+  <input
+    type="number"
+    class="form-control fs-3"
+    value="{{ secondValue }}"
+    (input)="onSecondInputChange($event)"
+  >
+</div>

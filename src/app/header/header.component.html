@@ -1,0 +1,10 @@
+<div class="mb-4 header">
+  <h1 *ngIf="date" class="text-center mb-5">Курс валют станом на {{ date | date: 'dd/MM/YYYY' }}</h1>
+  <h1 *ngIf="!date" class="spinner-border">
+    <span class="visually-hidden text-center">Loading...</span>
+  </h1>
+  <div class="d-flex justify-content-evenly">
+    <p class="fs-4">{{ usdRate }}</p>
+    <p class="fs-4">{{ eurRate }}</p>
+  </div>
+</div>
